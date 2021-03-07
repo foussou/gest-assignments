@@ -1,0 +1,34 @@
+<div class="ui-g dashboard-card">
+  <div class="ui-g-6 ui-md-3">
+    <p-card styleClass="overview-box-1">
+      Etudiants<h1>99</h1>
+    </p-card>
+  </div>
+  <div class="ui-g-6 ui-md-3">
+    <p-card styleClass="overview-box-2">
+      Assignments<h1>75</h1>
+    </p-card>
+  </div>
+  <div class="ui-g-6 ui-md-3">
+    <p-card styleClass="overview-box-3">
+      Assignments rendus<h1>68%</h1>
+    </p-card>
+  </div>
+  <div class="ui-g-6 ui-md-3">
+    <p-card styleClass="overview-box-4">
+      Assignments notés<h1>80%</h1>
+    </p-card>
+  </div>
+</div>
+<div class="ui-g">
+  <div class="ui-g-12 ui-md-6">
+    <p-card>
+      <p-chart type="doughnut" [data]="doughnutChartData" [height]="200" [width]="200"></p-chart>
+    </p-card>
+  </div>
+  <div class="ui-g-12 ui-md-6">
+    <p-card>
+      <p-chart type="bar" [data]="barChartData" [height]="200" [width]="200"></p-chart>
+    </p-card>
+  </div>
+</div>

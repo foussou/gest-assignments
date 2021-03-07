@@ -1,0 +1,46 @@
+<div class="login-panel">
+  <div class="p-grid p-nogutter p-justify-center p-align-center" style="height:100%">
+    <div class="p-xl-3 p-lg-6 p-md-8 p-sm-10">
+
+        <p-panel header="{{ 'Connexion'}}">
+
+          <div class="p-grid p-justify-center p-align-center">
+            <div class="p-xl-6 p-lg-6 p-md-8 p-sm-10">
+              <img src="assets/images/assignment.png" class="login-logo">
+            </div>
+            <form [formGroup]="formGroup" (submit)="onClickLogin()">
+              <div class="p-col-12">
+                <div class="ui-inputgroup">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                  <input id="input-username" type="text" size="30" pInputText formControlName="email"
+                    placeholder="Entez votre email">
+                </div>
+              </div>
+              <div class="p-col-12">
+                <div class="ui-inputgroup">
+                  <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+                  <input id="input-password" type="password" size="30" pInputText formControlName="password"
+                    placeholder="Entrez votre mot de passe">
+                </div>
+              </div>
+              <hr>
+              <div class="p-grid">
+              <div class="p-col-6">
+                <button pButton type="submit" label="{{ 'Connexion'}}" class="ui-button-raised"></button>
+              </div>
+              <div class="p-col-6">
+                <button pButton type="button" label="{{ 'S inscrire'}}" class="ui-button-raised"
+                        [routerLink]="['/register']"></button>
+              </div>
+            </div>
+            </form>
+          </div>
+
+        </p-panel>
+
+      <div class="extra-page-footer">
+        <div>2021@ Fousseny&&Ismael. MBDSM2.</div>
+      </div>
+    </div>
+  </div>
+</div>

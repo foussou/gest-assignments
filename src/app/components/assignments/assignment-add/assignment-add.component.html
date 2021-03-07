@@ -1,0 +1,62 @@
+<app-header-breadcrumb></app-header-breadcrumb>
+<div class="p-grid p-ai-center vertical-container">
+  <div class="p-col-2">
+    <div class="box"></div>
+  </div>
+  <div class="p-col-8">
+    <div class="box ">
+      <p-panel header="Header" [showHeader]="false" >
+        <div class="p-grid">
+          <div class="p-col-12">
+            <h2 align="center">AJOUTER UN NOUVEAU DEVOIR</h2>
+          </div>
+          <hr>
+          <div class="p-col-12">
+            <div class="box">
+              <span class="p-float-label">
+                <input type="text" pInputText [(ngModel)]="auteur" placeholder="Auteur : NOM & PRENOM">
+              </span>
+            </div>
+          </div>
+          <hr>
+          <div class="p-col-12">
+            <div class="box">
+              <span class="p-float-label">
+                <p-dropdown [options]="Choixmatieres" [(ngModel)]="matiere" placeholder="Matière" optionLabel="label" [showClear]="true"></p-dropdown>
+              </span>
+            </div>
+          </div>
+          <hr>
+          <div class="p-col-12">
+            <div class="box">
+              <span class="p-float-label">
+                <p-dropdown [options]="Choixprofs" [(ngModel)]="nomprof" placeholder="Prof" optionLabel="label" [showClear]="true"></p-dropdown>
+              </span>
+            </div>
+          </div>
+          <hr>
+          <div class="p-col-12">
+            <div class="box">
+              <span class="p-float-label">
+                <p-calendar [(ngModel)]="dateDeRendu" [showIcon]="true" inputId="icon" placeholder="Date"></p-calendar>
+              </span>
+            </div>
+          </div>
+          <div class="p-field-checkbox">
+            <label for="boolean">Rendu ? :</label>
+            <p-checkbox [(ngModel)]="rendu" binary="true" inputId="boolean" id="boolean"></p-checkbox>
+          </div>
+          <div class="p-col-12">
+            <button pButton pRipple type="button" label="Primary" class="p-button-rounded" (click)="onSubmit()"></button>
+          </div>
+        </div>
+
+      </p-panel>
+    </div>
+  </div>
+  <div class="p-col-2">
+    <div class="box"></div>
+  </div>
+</div>
+
+

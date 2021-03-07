@@ -1,0 +1,65 @@
+<div class="user-regisration">
+  <div class="p-grid p-nogutter p-justify-center p-align-center" style="height:100%">
+    <div class="p-xl-3 p-lg-6 p-md-8 p-sm-10">
+      <form [formGroup]="userform" (ngSubmit)="onClickRegisterUser()">
+        <p-panel header="Inscription">
+          <div class="p-grid p-justify-center p-align-center">
+            <div class="p-xl-6 p-lg-6 p-md-8 p-sm-10">
+              <img src="assets/images/assignment.png" class="login-logo">
+            </div>
+            <div class="p-col-12">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-user"></i></span>
+                <input id="float-input-username" type="text" size="30" pInputText formControlName="name"
+                  placeholder="Nom" required>
+              </div>
+            </div>
+            <div class="p-col-12" *ngIf="userform.controls['name'].errors && userform.controls['name'].dirty">
+              <p-message severity="error" text="Nom requis"
+                *ngIf="userform.controls['name'].errors['required']"></p-message>
+            </div>
+            <div class="p-col-12">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-key"></i></span>
+                <input id="float-input-password" type="password" size="30" pInputText formControlName="password"
+                  placeholder="Mot de passe" required>
+              </div>
+            </div>
+            <div class="p-col-12" *ngIf="userform.controls['password'].errors && userform.controls['password'].dirty">
+              <p-message severity="error" text="Mot de passe requis"
+                *ngIf="userform.controls['password'].errors['required']"></p-message>
+              <p-message severity="error" text="Minimum 6 charactères requises."
+                *ngIf="userform.controls['password'].errors['minlength'] "></p-message>
+            </div>
+            <div class="p-col-12">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="fa fa-at"></i></span>
+                <input id="float-input-emailid" type="email" size="30" pInputText formControlName="emailId"
+                  placeholder="Email" required>
+              </div>
+            </div>
+            <div class="p-col-12" *ngIf="userform.controls['emailId'].errors && userform.controls['emailId'].dirty">
+              <p-message severity="error" text="Email requis"
+                *ngIf="userform.controls['emailId'].errors['required']"></p-message>
+              <p-message severity="error" text="Email est invalide" *ngIf="userform.controls['emailId'].errors['email']">
+              </p-message>
+            </div>
+          </div>
+          <div class="p-grid">
+            <div class="p-col-6">
+              <button pButton type="button" label="Register" class="ui-button-raised" [disabled]="!userform.valid"
+                (click)="onClickRegisterUser()"></button>
+            </div>
+            <div class="p-col-6">
+              <button pButton type="button" label="Login" class="ui-button-raised"
+                (click)="onClickGoToLogin()"></button>
+            </div>
+          </div>
+        </p-panel>
+        <div class="extra-page-footer">
+          <div>2021@ Fousseny&&Ismael. MBDSM2.</div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

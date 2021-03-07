@@ -1,0 +1,19 @@
+<app-header-breadcrumb></app-header-breadcrumb>
+<p-panel *ngIf="assignmentTransmis" header="Department Details" [showHeader]="false">
+  <img src="assets/images/{{assignmentTransmis.photo}}" alt="" style="height: 300px; width: 500px">
+  <h2>Titre du devoir : {{assignmentTransmis.matiere}}</h2>
+  <h3>Date de rendu : {{assignmentTransmis.dateDeRendu | date}}</h3>
+  <h3>Nom du professeur :</h3><p> {{assignmentTransmis.nomprof}}</p>
+  <h3>Auteur : </h3><p> {{assignmentTransmis.auteur}}</p>
+  <div id="bottom">
+    <div class="p-field-checkbox" *ngIf="!assignmentTransmis.rendu">
+      <p-checkbox  (click)="onAssignmentRendu()"></p-checkbox>
+      <label>Devoir rendu</label>
+    </div>
+    <button pButton pRipple label="EDIT" type="button" class="p-button-rounded" (click)="onClickEdit()"></button>
+    <button pButton pRipple label="DELETE" type="button" class="p-button-rounded p-button-danger" (click)="onDelete()"></button>
+  </div>
+  <p-footer>
+    <button pButton type="button" label="Back" class="ui-button-secondary prime-button" (click)="back()"></button>
+  </p-footer>
+</p-panel>

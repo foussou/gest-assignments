@@ -1,0 +1,35 @@
+<app-header-breadcrumb></app-header-breadcrumb>
+<p-dataView #dv [value]="assignments" [paginator]="true" [rows]="9" filterBy="name"
+            [sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
+  <ng-template pTemplate="header">
+    <div class="p-d-flex p-flex-column p-flex-md-row p-jc-md-between">
+      <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By Price" (onChange)="onSortChange($event)" styleClass="p-mb-2 p-mb-md-0"></p-dropdown>
+      <span class="p-input-icon-left p-mb-2 p-mb-md-0">
+                  <i class="pi pi-search"></i>
+                  <input type="search" pInputText placeholder="Search by Name" (input)="dv.filter($event.target.value)">
+              </span>
+      <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+    </div>
+  </ng-template>
+  <ng-template let-assignment pTemplate="gridItem">
+    <div class="p-col-12 p-md-4">
+      <div class="assignment-grid-item card">
+        <div class="assignment-grid-item-top">
+          <div>
+            <span class="assignment-category">{{assignment.matiere}}</span>
+          </div>
+          <span>{{assignment.dateDeRendu | date}}</span>
+        </div>
+        <div class="assignment-grid-item-content">
+          <img [src]="'assets/images/' + assignment.photo" [alt]="assignment.matiere" style="width: 300px; height: 200px"/>
+          <div class="assignment-name">{{assignment.nomprof}}</div>
+          <div class="assignment-description">auteur : {{assignment.auteur}}</div>
+        </div>
+        <div class="assignment-grid-item-bottom">
+          <span class="assignment-price">Note :{{assignment.note}}</span>
+            <p-button icon="pi pi-eye" (click)="voirDetail(assignment.id)"> voir</p-button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</p-dataView>
